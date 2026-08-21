@@ -46,10 +46,15 @@ if ($exportData.error) {
     throw "AgentMemory export failed: $($exportData.error)"
 }
 
+$exportData.PSObject.Properties.Remove('exportedAt')
 $json = $exportData | ConvertTo-Json -Depth 100
 Assert-NoPlaintextSecrets -Text $json
-[System.IO.File]::WriteAllText($tempPath, $json + [Environment]::NewLine, [System.Text.UTF8Encoding]::new($false))
-Move-Item -LiteralPath $tempPath -Destination $exportPath -Force
+$newContent = $json + [Environment]::NewLine
+$oldContent = if (Test-Path -LiteralPath $exportPath -PathType Leaf) {
+    [System.IO.File]::ReadAllText($exportPath)
+} else {
+    $null
+}
 
 $observationCount = 0
 if ($exportData.observations) {
@@ -65,8 +70,12 @@ $meta = [ordered]@{
     memories = @($exportData.memories).Count
     lessons = @($exportData.lessons).Count
 }
-$metaJson = $meta | ConvertTo-Json
-[System.IO.File]::WriteAllText($metaPath, $metaJson + [Environment]::NewLine, [System.Text.UTF8Encoding]::new($false))
+if ($newContent -cne $oldContent) {
+    [System.IO.File]::WriteAllText($tempPath, $newContent, [System.Text.UTF8Encoding]::new($false))
+    Move-Item -LiteralPath $tempPath -Destination $exportPath -Force
+    $metaJson = $meta | ConvertTo-Json
+    [System.IO.File]::WriteAllText($metaPath, $metaJson + [Environment]::NewLine, [System.Text.UTF8Encoding]::new($false))
+}
 
 & git -C $repoDir add -- memory-export.json backup-meta.json
 if ($LASTEXITCODE -ne 0) { throw 'git add failed.' }
@@ -88,4 +97,3 @@ if (-not $NoPush) {
 }
 
 Write-Host "Backup complete: $($meta.sessions) sessions, $($meta.observations) observations, $($meta.memories) memories, $($meta.lessons) lessons."
-
