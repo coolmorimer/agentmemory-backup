@@ -28,7 +28,7 @@ if (-not (Test-Path -LiteralPath $exportPath -PathType Leaf)) {
     throw "Backup file not found: $exportPath"
 }
 
-$exportData = Get-Content -LiteralPath $exportPath -Raw | ConvertFrom-Json -Depth 100
+$exportData = Get-Content -LiteralPath $exportPath -Raw | ConvertFrom-Json
 $body = @{ exportData = $exportData; strategy = $Strategy } | ConvertTo-Json -Depth 100
 $result = Invoke-RestMethod -Uri "$ApiUrl/agentmemory/import" -Method Post -ContentType 'application/json; charset=utf-8' -Body $body -TimeoutSec 300
 if ($result.success -ne $true) {
@@ -38,4 +38,3 @@ if ($result.success -ne $true) {
 $searchBody = @{ query = 'memory'; limit = 1 } | ConvertTo-Json
 $null = Invoke-RestMethod -Uri "$ApiUrl/agentmemory/smart-search" -Method Post -ContentType 'application/json' -Body $searchBody -TimeoutSec 30
 Write-Host "Restore complete using strategy '$Strategy'. AgentMemory search responded successfully."
-
