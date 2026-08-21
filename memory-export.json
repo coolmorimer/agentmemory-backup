@@ -249,7 +249,7 @@
                                                                                     ],
                                                                           "id":  "obs_mt1kt23b_fd55bb8d7bfd",
                                                                           "importance":  5,
-                                                                          "narrative":  "{} | {\"content\":[{\"text\":\"{\\n  \\\"sessions\\\": [\\n    {\\n      \\\"cwd\\\": \\\"G:\\\\\\\\agentmemory\\\",\\n      \\\"endedAt\\\": \\\"2026-08-20T13:44:15.264Z\\\",\\n      \\\"firstPrompt\\\": \\\"Use the AgentMemory MCP server. Call memory_verify once, do not use shell or modify files, then report only whether the call succeeded and how many tools AgentMemory exposes if visible.\\\",\\n      \\\"id\\\": \\\"01a01f69-f76c-7543-8637-â¦",
+                                                                          "narrative":  "{} | {\"content\":[{\"text\":\"{\\n  \\\"sessions\\\": [\\n    {\\n      \\\"cwd\\\": \\\"G:\\\\\\\\agentmemory\\\",\\n      \\\"endedAt\\\": \\\"2026-08-20T13:44:15.264Z\\\",\\n      \\\"firstPrompt\\\": \\\"Use the AgentMemory MCP server. Call memory_verify once, do not use shell or modify files, then report only whether the call succeeded and how many tools AgentMemory exposes if visible.\\\",\\n      \\\"id\\\": \\\"01a01f69-f76c-7543-8637-ÐÑÐÐÐÂ¦",
                                                                           "origin":  {
                                                                                          "capturedAt":  "2026-08-20T13:48:32.043Z",
                                                                                          "channel":  "tool",
