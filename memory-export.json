@@ -1,59 +1,13 @@
 {
     "accessLogs":  [
                        {
-                           "count":  5,
-                           "lastAt":  "2026-08-21T07:44:12.031Z",
-                           "memoryId":  "obs_mt1kn6az_2287e1fda6e3",
-                           "recent":  [
-                                          1787233512679,
-                                          1787233581016,
-                                          1787233629612,
-                                          1787233694220,
-                                          1787298252031
-                                      ]
-                       },
-                       {
-                           "count":  4,
-                           "lastAt":  "2026-08-21T07:44:12.031Z",
-                           "memoryId":  "obs_mt1koshq_f28ab3bee4f9",
-                           "recent":  [
-                                          1787233581016,
-                                          1787233629612,
-                                          1787233694220,
-                                          1787298252031
-                                      ]
-                       },
-                       {
-                           "count":  2,
-                           "lastAt":  "2026-08-20T13:48:14.220Z",
-                           "memoryId":  "obs_mt1kq98m_e372c6cc62bb",
-                           "recent":  [
-                                          1787233629612,
-                                          1787233694220
-                                      ]
-                       },
-                       {
-                           "count":  1,
-                           "lastAt":  "2026-08-20T13:48:14.220Z",
-                           "memoryId":  "obs_mt1kraq5_c4b0a54e509b",
-                           "recent":  [
-                                          1787233694220
-                                      ]
-                       },
-                       {
-                           "count":  1,
-                           "lastAt":  "2026-08-20T13:48:14.220Z",
-                           "memoryId":  "obs_mt1krkz0_2f0840efd7b5",
-                           "recent":  [
-                                          1787233694220
-                                      ]
-                       },
-                       {
-                           "count":  1,
-                           "lastAt":  "2026-08-25T14:01:52.703Z",
+                           "count":  3,
+                           "lastAt":  "2026-08-25T18:48:00.927Z",
                            "memoryId":  "mem_mt2o4hhh_a1931a89c0c0",
                            "recent":  [
-                                          1787666512703
+                                          1787666512703,
+                                          1787683247953,
+                                          1787683680927
                                       ]
                        }
                    ],
@@ -205,29 +159,6 @@
                                                                           "files":  [
 
                                                                                     ],
-                                                                          "id":  "obs_mt1kraq5_c4b0a54e509b",
-                                                                          "importance":  5,
-                                                                          "narrative":  "Use AgentMemory. Call memory_verify exactly once. Do not use shell and do not modify files. Report only success or failure and the exposed AgentMemory tool count.",
-                                                                          "origin":  {
-                                                                                         "capturedAt":  "2026-08-20T13:47:09.917Z",
-                                                                                         "channel":  "user"
-                                                                                     },
-                                                                          "sessionId":  "01a01f6c-e3e8-7d62-9be6-e991e11b38d5",
-                                                                          "timestamp":  "2026-08-20T13:47:09.917Z",
-                                                                          "title":  "prompt_submit",
-                                                                          "type":  "conversation"
-                                                                      },
-                                                                      {
-                                                                          "concepts":  [
-
-                                                                                       ],
-                                                                          "confidence":  0.3,
-                                                                          "facts":  [
-
-                                                                                    ],
-                                                                          "files":  [
-
-                                                                                    ],
                                                                           "id":  "obs_mt1krkz0_2f0840efd7b5",
                                                                           "importance":  5,
                                                                           "narrative":  "{\"id\":\"healthcheck\"} | {\"content\":[{\"text\":\"{\\n  \\\"error\\\": \\\"not found\\\",\\n  \\\"success\\\": false\\n}\",\"type\":\"text\"}]}",
@@ -241,6 +172,29 @@
                                                                           "timestamp":  "2026-08-20T13:47:23.199Z",
                                                                           "title":  "mcp__agentmemory__memory_verify",
                                                                           "type":  "other"
+                                                                      },
+                                                                      {
+                                                                          "concepts":  [
+
+                                                                                       ],
+                                                                          "confidence":  0.3,
+                                                                          "facts":  [
+
+                                                                                    ],
+                                                                          "files":  [
+
+                                                                                    ],
+                                                                          "id":  "obs_mt1kraq5_c4b0a54e509b",
+                                                                          "importance":  5,
+                                                                          "narrative":  "Use AgentMemory. Call memory_verify exactly once. Do not use shell and do not modify files. Report only success or failure and the exposed AgentMemory tool count.",
+                                                                          "origin":  {
+                                                                                         "capturedAt":  "2026-08-20T13:47:09.917Z",
+                                                                                         "channel":  "user"
+                                                                                     },
+                                                                          "sessionId":  "01a01f6c-e3e8-7d62-9be6-e991e11b38d5",
+                                                                          "timestamp":  "2026-08-20T13:47:09.917Z",
+                                                                          "title":  "prompt_submit",
+                                                                          "type":  "conversation"
                                                                       }
                                                                   ],
                          "01a01f6d-e224-7cb3-ab29-8069ea4dcb5e":  [
@@ -280,7 +234,7 @@
                                                                                     ],
                                                                           "id":  "obs_mt1kt23b_fd55bb8d7bfd",
                                                                           "importance":  5,
-                                                                          "narrative":  "{} | {\"content\":[{\"text\":\"{\\n  \\\"sessions\\\": [\\n    {\\n      \\\"cwd\\\": \\\"G:\\\\\\\\agentmemory\\\",\\n      \\\"endedAt\\\": \\\"2026-08-20T13:44:15.264Z\\\",\\n      \\\"firstPrompt\\\": \\\"Use the AgentMemory MCP server. Call memory_verify once, do not use shell or modify files, then report only whether the call succeeded and how many tools AgentMemory exposes if visible.\\\",\\n      \\\"id\\\": \\\"01a01f69-f76c-7543-8637-ÐÑÐÐÐÂ¦",
+                                                                          "narrative":  "{} | {\"content\":[{\"text\":\"{\\n  \\\"sessions\\\": [\\n    {\\n      \\\"cwd\\\": \\\"G:\\\\\\\\agentmemory\\\",\\n      \\\"endedAt\\\": \\\"2026-08-20T13:44:15.264Z\\\",\\n      \\\"firstPrompt\\\": \\\"Use the AgentMemory MCP server. Call memory_verify once, do not use shell or modify files, then report only whether the call succeeded and how many tools AgentMemory exposes if visible.\\\",\\n      \\\"id\\\": \\\"01a01f69-f76c-7543-8637-ÐÑÐâÐâÐÑÐÑÐâÐÑÐâÐÑÐâÐâÐÂ¦",
                                                                           "origin":  {
                                                                                          "capturedAt":  "2026-08-20T13:48:32.043Z",
                                                                                          "channel":  "tool",
@@ -295,6 +249,17 @@
                                                                   ]
                      },
     "sessions":  [
+                     {
+                         "cwd":  "G:\\agentmemory",
+                         "endedAt":  "2026-08-20T13:46:41.430Z",
+                         "firstPrompt":  "Use the AgentMemory MCP server. Call memory_verify exactly once, do not use shell or modify files, then report whether it succeeded and how many AgentMemory tools are exposed.",
+                         "id":  "01a01f6c-24c4-7413-964b-15752c25f6f6",
+                         "observationCount":  1,
+                         "project":  "agentmemory",
+                         "startedAt":  "2026-08-20T13:46:21.013Z",
+                         "status":  "completed",
+                         "updatedAt":  "2026-08-20T13:46:21.384Z"
+                     },
                      {
                          "cwd":  "G:\\agentmemory",
                          "endedAt":  "2026-08-20T13:44:15.264Z",
@@ -319,14 +284,14 @@
                      },
                      {
                          "cwd":  "G:\\agentmemory",
-                         "endedAt":  "2026-08-20T13:46:41.430Z",
-                         "firstPrompt":  "Use the AgentMemory MCP server. Call memory_verify exactly once, do not use shell or modify files, then report whether it succeeded and how many AgentMemory tools are exposed.",
-                         "id":  "01a01f6c-24c4-7413-964b-15752c25f6f6",
-                         "observationCount":  1,
+                         "endedAt":  "2026-08-20T13:48:34.132Z",
+                         "firstPrompt":  "Use AgentMemory. Call memory_sessions exactly once. Do not use shell and do not modify files. Report only whether the MCP call completed, how many AgentMemory tools are exposed, and the number of sess",
+                         "id":  "01a01f6d-e224-7cb3-ab29-8069ea4dcb5e",
+                         "observationCount":  2,
                          "project":  "agentmemory",
-                         "startedAt":  "2026-08-20T13:46:21.013Z",
+                         "startedAt":  "2026-08-20T13:48:14.217Z",
                          "status":  "completed",
-                         "updatedAt":  "2026-08-20T13:46:21.384Z"
+                         "updatedAt":  "2026-08-20T13:48:32.089Z"
                      },
                      {
                          "cwd":  "G:\\agentmemory",
@@ -338,17 +303,6 @@
                          "startedAt":  "2026-08-20T13:47:09.598Z",
                          "status":  "completed",
                          "updatedAt":  "2026-08-20T13:47:23.245Z"
-                     },
-                     {
-                         "cwd":  "G:\\agentmemory",
-                         "endedAt":  "2026-08-20T13:48:34.132Z",
-                         "firstPrompt":  "Use AgentMemory. Call memory_sessions exactly once. Do not use shell and do not modify files. Report only whether the MCP call completed, how many AgentMemory tools are exposed, and the number of sess",
-                         "id":  "01a01f6d-e224-7cb3-ab29-8069ea4dcb5e",
-                         "observationCount":  2,
-                         "project":  "agentmemory",
-                         "startedAt":  "2026-08-20T13:48:14.217Z",
-                         "status":  "completed",
-                         "updatedAt":  "2026-08-20T13:48:32.089Z"
                      }
                  ],
     "summaries":  [
