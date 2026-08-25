@@ -1,15 +1,24 @@
 {
     "accessLogs":  [
                        {
-                           "count":  5,
-                           "lastAt":  "2026-08-25T18:58:17.106Z",
+                           "count":  6,
+                           "lastAt":  "2026-08-25T19:02:32.354Z",
                            "memoryId":  "mem_mt2o4hhh_a1931a89c0c0",
                            "recent":  [
                                           1787666512703,
                                           1787683247953,
                                           1787683680927,
                                           1787683742815,
-                                          1787684297106
+                                          1787684297106,
+                                          1787684552354
+                                      ]
+                       },
+                       {
+                           "count":  1,
+                           "lastAt":  "2026-08-25T19:03:41.671Z",
+                           "memoryId":  "obs_mt1ksokx_12efe4697c18",
+                           "recent":  [
+                                          1787684621671
                                       ]
                        }
                    ],
@@ -34,6 +43,27 @@
                                      "photo-editor"
                                  ],
                         "updatedAt":  "2026-08-21T13:19:55.952Z"
+                    },
+                    {
+                        "confidence":  0.7,
+                        "content":  "Validate Faster Whisper CUDA by transcribing real audio, not merely constructing WhisperModel; CUDA libraries such as cublas64_12.dll are loaded only when inference begins.",
+                        "context":  "Configuring or smoke-testing GPU-backed Faster Whisper in MoneyPrinterTurbo or similar Windows projects",
+                        "createdAt":  "2026-08-25T19:35:42.057Z",
+                        "decayRate":  0.05,
+                        "id":  "lsn_427845079ab7fb03",
+                        "project":  "MoneyPrinterTurbo",
+                        "reinforcements":  0,
+                        "source":  "manual",
+                        "sourceIds":  [
+
+                                      ],
+                        "tags":  [
+                                     "faster-whisper",
+                                     "cuda",
+                                     "smoke-test",
+                                     "windows"
+                                 ],
+                        "updatedAt":  "2026-08-25T19:35:42.057Z"
                     }
                 ],
     "memories":  [
@@ -70,6 +100,75 @@
                          "title":  "Manual ZenMoney historical synchronization imports the entire selected date rang",
                          "type":  "architecture",
                          "updatedAt":  "2026-08-21T08:09:10.276Z",
+                         "version":  1
+                     },
+                     {
+                         "concepts":  [
+                                          "MoneyPrinterTurbo",
+                                          "Ollama qwen3:8b",
+                                          "faster-whisper CUDA",
+                                          "RTX 3060",
+                                          "local setup"
+                                      ],
+                         "content":  "For local MoneyPrinterTurbo on this Windows machine, use Ollama qwen3:8b for the LLM and faster-whisper large-v3-turbo with CUDA/float16. RTX 3060 12 GB and 24 GB system RAM successfully loaded both; project LLM smoke test passed, with ~66s cold start. FFmpeg was installed through winget and configured explicitly in config.toml.",
+                         "createdAt":  "2026-08-25T19:18:12.142Z",
+                         "files":  [
+                                       "config.toml"
+                                   ],
+                         "id":  "mem_mt91s9td_4544c688295e",
+                         "isLatest":  true,
+                         "origin":  {
+                                        "capturedAt":  "2026-08-25T19:18:12.142Z",
+                                        "channel":  "agent"
+                                    },
+                         "project":  "MoneyPrinterTurbo",
+                         "sessionIds":  [
+
+                                        ],
+                         "sourceObservationIds":  [
+
+                                                  ],
+                         "strength":  7,
+                         "supersedes":  [
+
+                                        ],
+                         "title":  "For local MoneyPrinterTurbo on this Windows machine, use Ollama qwen3:8b for the",
+                         "type":  "workflow",
+                         "updatedAt":  "2026-08-25T19:18:12.142Z",
+                         "version":  1
+                     },
+                     {
+                         "concepts":  [
+                                          "Faster Whisper",
+                                          "cublas64_12.dll",
+                                          "Ollama CUDA runtime",
+                                          "Windows PATH"
+                                      ],
+                         "content":  "On this Windows machine, Faster Whisper CUDA needs C:\\Users\\Morcool\\AppData\\Local\\Programs\\Ollama\\lib\\ollama\\cuda_v12 on the process PATH; that directory supplies cublas64_12.dll. The directory was appended to the user PATH, and real transcription of the failed task audio succeeded on CUDA.",
+                         "createdAt":  "2026-08-25T19:44:57.186Z",
+                         "files":  [
+                                       "config.toml"
+                                   ],
+                         "id":  "mem_mt92qo9w_ba60de9f8d4e",
+                         "isLatest":  true,
+                         "origin":  {
+                                        "capturedAt":  "2026-08-25T19:44:57.186Z",
+                                        "channel":  "agent"
+                                    },
+                         "project":  "MoneyPrinterTurbo",
+                         "sessionIds":  [
+
+                                        ],
+                         "sourceObservationIds":  [
+
+                                                  ],
+                         "strength":  7,
+                         "supersedes":  [
+
+                                        ],
+                         "title":  "On this Windows machine, Faster Whisper CUDA needs C:\\Users\\Morcool\\AppData\\Loca",
+                         "type":  "workflow",
+                         "updatedAt":  "2026-08-25T19:44:57.186Z",
                          "version":  1
                      }
                  ],
