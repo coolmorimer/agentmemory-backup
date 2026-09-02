@@ -72,12 +72,13 @@
                    ],
     "lessons":  [
                     {
-                        "confidence":  0.7,
+                        "confidence":  0.617,
                         "content":  "Design FaceBooth kiosk photo editors touch-first: use direct drag and pinch gestures plus large controls instead of a dense desktop-style set of small sliders, because guests operate the kiosk like a phone.",
                         "context":  "When creating or revising interactive photo editing screens in the FaceBooth kiosk UI.",
                         "createdAt":  "2026-08-21T13:19:55.952Z",
                         "decayRate":  0.05,
                         "id":  "lsn_4b801ec47961f69a",
+                        "lastDecayedAt":  "2026-09-02T05:33:11.855Z",
                         "project":  "ai_photobudka",
                         "reinforcements":  0,
                         "source":  "manual",
@@ -90,7 +91,7 @@
                                      "touch-ui",
                                      "photo-editor"
                                  ],
-                        "updatedAt":  "2026-08-21T13:19:55.952Z"
+                        "updatedAt":  "2026-09-02T05:33:11.855Z"
                     }
                 ],
     "memories":  [
