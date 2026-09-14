@@ -1,0 +1,30 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "AutoDev: Start stack",
+      "type": "shell",
+      "command": "docker compose -f docker-compose.dev.yml --profile application up -d --build",
+      "problemMatcher": []
+    },
+    {
+      "label": "AutoDev: Start worker",
+      "type": "shell",
+      "command": "uv run autodev-worker",
+      "isBackground": true,
+      "problemMatcher": []
+    },
+    {
+      "label": "AutoDev: Doctor",
+      "type": "shell",
+      "command": "uv run autodev doctor --verbose",
+      "problemMatcher": []
+    },
+    {
+      "label": "AutoDev: Discover local models",
+      "type": "shell",
+      "command": "Invoke-RestMethod -Method Post -Uri http://127.0.0.1:8000/api/models/discover?provider=ollama",
+      "problemMatcher": []
+    }
+  ]
+}

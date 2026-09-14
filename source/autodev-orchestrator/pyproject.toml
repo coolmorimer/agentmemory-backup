@@ -1,0 +1,65 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "autodev-orchestrator"
+version = "0.1.0"
+description = "A durable, policy-aware autonomous software delivery orchestrator"
+readme = "README.md"
+requires-python = ">=3.13,<3.15"
+license = { text = "Proprietary" }
+dependencies = [
+  "alembic>=1.14",
+  "asyncpg>=0.30",
+  "cryptography>=50.0.1",
+  "fastapi>=0.115",
+  "httpx>=0.28",
+  "pydantic-settings>=2.6",
+  "pyyaml>=6.0.2",
+  "redis>=5.2",
+  "sqlalchemy[asyncio]>=2.0.36",
+  "structlog>=24.4",
+  "typer>=0.15",
+  "uvicorn[standard]>=0.32",
+]
+
+[project.scripts]
+autodev = "autodev.cli:app"
+autodev-worker = "autodev.worker_main:run"
+
+[dependency-groups]
+dev = [
+  "aiosqlite>=0.20",
+  "mypy>=1.14",
+  "pytest>=8.3",
+  "pytest-asyncio>=0.25",
+  "ruff>=0.9",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["apps/api/autodev"]
+
+[tool.pytest.ini_options]
+addopts = "-ra --strict-config --strict-markers"
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py313"
+line-length = 100
+src = ["apps/api", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "ASYNC", "SIM", "RUF"]
+
+[tool.mypy]
+python_version = "3.13"
+strict = true
+packages = ["autodev"]
+mypy_path = "apps/api"
+plugins = ["pydantic.mypy"]
+
+[[tool.mypy.overrides]]
+module = ["yaml"]
+ignore_missing_imports = true

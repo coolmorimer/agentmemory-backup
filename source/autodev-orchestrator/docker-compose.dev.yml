@@ -1,0 +1,73 @@
+services:
+  postgres:
+    image: pgvector/pgvector:pg17
+    environment:
+      POSTGRES_DB: autodev
+      POSTGRES_USER: autodev
+      POSTGRES_PASSWORD: autodev
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U autodev -d autodev"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+    volumes:
+      - autodev-postgres:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+    volumes:
+      - autodev-redis:/data
+
+  api:
+    build: .
+    profiles: ["application"]
+    environment:
+      AUTODEV_DATABASE_URL: postgresql+asyncpg://autodev:autodev@postgres:5432/autodev
+      AUTODEV_REDIS_URL: redis://redis:6379/0
+      AUTODEV_OLLAMA_BASE_URL: http://host.docker.internal:11434
+      AUTODEV_AGENTMEMORY_BASE_URL: http://host.docker.internal:3111
+      AUTODEV_CREDENTIAL_KEY: ${AUTODEV_CREDENTIAL_KEY:-}
+    ports:
+      - "8000:8000"
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health', timeout=2)"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  migrate:
+    build: .
+    profiles: ["application"]
+    command: ["alembic", "upgrade", "head"]
+    environment:
+      AUTODEV_DATABASE_URL: postgresql+asyncpg://autodev:autodev@postgres:5432/autodev
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  web:
+    build: ./apps/web
+    profiles: ["application"]
+    ports:
+      - "5173:80"
+    depends_on:
+      api:
+        condition: service_healthy
+
+volumes:
+  autodev-postgres:
+  autodev-redis:

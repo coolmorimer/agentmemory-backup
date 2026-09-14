@@ -1,0 +1,7 @@
+{
+  "chatgpt.runCodexInWindowsSubsystemForLinux": false,
+  "autodev.apiUrl": "http://127.0.0.1:8000",
+  "autodev.dashboardUrl": "http://127.0.0.1:5173",
+  "autodev.workerCommand": "uv run autodev-worker",
+  "autodev.refreshSeconds": 5
+}

@@ -1,0 +1,97 @@
+{
+  "name": "autodev-orchestrator-vscode",
+  "displayName": "AutoDev Orchestrator",
+  "description": "Operate AutoDev projects, providers, local models, and workers from VS Code.",
+  "version": "0.2.3",
+  "publisher": "local-autodev",
+  "license": "UNLICENSED",
+  "engines": {
+    "vscode": "^1.95.0"
+  },
+  "categories": ["Other", "Machine Learning"],
+  "activationEvents": ["onStartupFinished"],
+  "main": "./dist/extension.js",
+  "files": ["dist", "media", "README.md"],
+  "scripts": {
+    "build": "tsc -p .",
+    "package": "npm run build && vsce package --no-dependencies",
+    "check": "tsc -p . --noEmit"
+  },
+  "contributes": {
+    "commands": [
+      { "command": "autodev.refresh", "title": "AutoDev: Refresh" },
+      { "command": "autodev.openControlRoom", "title": "AutoDev: Open Control Room" },
+      { "command": "autodev.newGoal", "title": "AutoDev: Create and Start Goal" },
+      { "command": "autodev.deleteProject", "title": "AutoDev: Delete Project" },
+      { "command": "autodev.pauseTask", "title": "AutoDev: Pause One Task" },
+      { "command": "autodev.resumeTask", "title": "AutoDev: Resume Paused Task" },
+      { "command": "autodev.cancelTask", "title": "AutoDev: Cancel Active Task" },
+      { "command": "autodev.deleteTask", "title": "AutoDev: Delete Task" },
+      { "command": "autodev.configureOpenRouter", "title": "AutoDev: Configure OpenRouter" },
+      { "command": "autodev.discoverModels", "title": "AutoDev: Refresh Model Catalog" },
+      { "command": "autodev.discoverOllamaModels", "title": "AutoDev: Discover Ollama Models" },
+      { "command": "autodev.discoverOpenRouterModels", "title": "AutoDev: Discover OpenRouter Models" },
+      { "command": "autodev.selectLocalModel", "title": "AutoDev: Select Local Model" },
+      { "command": "autodev.startWorker", "title": "AutoDev: Start Worker" },
+      { "command": "autodev.stopWorker", "title": "AutoDev: Stop Worker" },
+      { "command": "autodev.doctor", "title": "AutoDev: Run Doctor" }
+    ],
+    "configuration": {
+      "title": "AutoDev Orchestrator",
+      "properties": {
+        "autodev.apiUrl": {
+          "type": "string",
+          "default": "http://127.0.0.1:8000",
+          "description": "AutoDev API base URL."
+        },
+        "autodev.dashboardUrl": {
+          "type": "string",
+          "default": "http://127.0.0.1:5173",
+          "description": "AutoDev web control room URL."
+        },
+        "autodev.workerCommand": {
+          "type": "string",
+          "default": "uv run autodev-worker",
+          "description": "Command started in the workspace terminal for the host worker."
+        },
+        "autodev.refreshSeconds": {
+          "type": "number",
+          "default": 5,
+          "minimum": 2,
+          "maximum": 120,
+          "description": "Sidebar refresh interval."
+        }
+      }
+    },
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "autodev",
+          "title": "AutoDev",
+          "icon": "media/autodev.svg"
+        }
+      ]
+    },
+    "views": {
+      "autodev": [
+        { "id": "autodev.control", "name": "Control Room", "type": "webview" },
+        { "id": "autodev.projects", "name": "Projects" },
+        { "id": "autodev.models", "name": "Models & Providers" }
+      ]
+    },
+    "menus": {
+      "view/title": [
+        { "command": "autodev.refresh", "when": "view =~ /autodev/", "group": "navigation@1" },
+        { "command": "autodev.newGoal", "when": "view == autodev.projects", "group": "navigation@2" },
+        { "command": "autodev.deleteProject", "when": "view == autodev.projects", "group": "navigation@3" },
+        { "command": "autodev.selectLocalModel", "when": "view == autodev.models", "group": "navigation@2" }
+      ]
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@types/vscode": "^1.95.0",
+    "@vscode/vsce": "^3.6.0",
+    "typescript": "^5.9.0"
+  }
+}

@@ -1,0 +1,28 @@
+models:
+  - id: ollama/qwen2.5-coder:7b
+    roles: [log_analysis, classification, summarization, fast_review]
+    local: true
+    max_context: 32768
+  - id: ollama/qwen2.5-coder:14b
+    roles: [coding, code_review, debugging]
+    local: true
+    max_context: 16384
+  - id: ollama/qwen3:14b
+    roles: [planning, reasoning, incident_analysis]
+    local: true
+    max_context: 16384
+  - id: ollama/gemma3:12b
+    roles: [vision, ui_qa]
+    local: true
+    max_context: 16384
+  - id: ollama/deepseek-coder-v2:16b
+    roles: [coding, code_review, debugging]
+    local: true
+    max_context: 16384
+  - id: ollama/qwen3-embedding:0.6b
+    roles: [embedding_online]
+    local: true
+  - id: ollama/qwen3-embedding:4b
+    roles: [embedding_reindex]
+    local: true
+

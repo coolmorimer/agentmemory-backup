@@ -1,0 +1,9 @@
+weights:
+  quality: 0.30
+  task_match: 0.25
+  reliability: 0.15
+  quota: 0.10
+  latency: 0.10
+  privacy: 0.10
+escalation: [local_fast, local_main, free_cloud, strong_cloud, codex]
+

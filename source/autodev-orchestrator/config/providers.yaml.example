@@ -1,0 +1,24 @@
+providers:
+  ollama:
+    enabled: true
+    kind: ollama
+    base_url: http://localhost:11434
+    billing_mode: local
+    accepts_private_code: true
+  litellm:
+    enabled: true
+    kind: openai_compatible
+    base_url: http://localhost:4000/v1
+    billing_mode: gateway
+  openrouter: {enabled: false, kind: openai_compatible, base_url: https://openrouter.ai/api/v1, api_key_env: OPENROUTER_API_KEY, billing_mode: free}
+  groq: {enabled: false, kind: openai_compatible, api_key_env: GROQ_API_KEY, billing_mode: free}
+  gemini: {enabled: false, kind: openai_compatible, api_key_env: GEMINI_API_KEY, billing_mode: free}
+  nvidia: {enabled: false, kind: openai_compatible, api_key_env: NVIDIA_API_KEY, billing_mode: free}
+  mistral: {enabled: false, kind: openai_compatible, api_key_env: MISTRAL_API_KEY, billing_mode: free}
+  cloudflare: {enabled: false, kind: openai_compatible, api_key_env: CLOUDFLARE_API_TOKEN, billing_mode: free}
+  sambanova: {enabled: false, kind: openai_compatible, api_key_env: SAMBANOVA_API_KEY, billing_mode: free}
+  cerebras: {enabled: false, kind: openai_compatible, api_key_env: CEREBRAS_API_KEY, billing_mode: free}
+  fireworks: {enabled: false, kind: openai_compatible, api_key_env: FIREWORKS_API_KEY, billing_mode: free}
+  huggingface: {enabled: false, kind: openai_compatible, api_key_env: HUGGINGFACE_API_KEY, billing_mode: free}
+  lmstudio: {enabled: false, kind: openai_compatible, base_url: http://localhost:1234/v1, billing_mode: local, accepts_private_code: true}
+  generic: {enabled: false, kind: openai_compatible, billing_mode: free}

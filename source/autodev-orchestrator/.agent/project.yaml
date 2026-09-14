@@ -1,0 +1,7 @@
+name: autodev-orchestrator
+specification: autodev_orchestrator_full_spec.md
+privacy: PRIVATE
+state: COMPLETED
+target_python: "3.13"
+source_of_truth: postgresql
+current_milestone: M6

@@ -1,0 +1,18 @@
+budget:
+  allow_paid_models: false
+  max_cloud_cost_usd_day: 0.0
+  max_cloud_cost_usd_month: 0.0
+recovery:
+  task_max_attempts: 5
+  same_strategy_max_attempts: 2
+  provider_retry_max: 2
+workers:
+  max_codex_workers: 2
+  max_local_gpu_workers: 1
+  max_cloud_workers: 4
+production:
+  deploy: require_approval
+migrations:
+  safe: auto
+  destructive: require_approval
+

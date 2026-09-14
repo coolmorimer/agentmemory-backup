@@ -1,0 +1,20 @@
+{
+  "name": "agentmemory-backup",
+  "interface": {
+    "displayName": "AgentMemory Backup"
+  },
+  "plugins": [
+    {
+      "name": "agentmemory",
+      "source": {
+        "source": "local",
+        "path": "./source/codex-plugin"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Memory"
+    }
+  ]
+}
